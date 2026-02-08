@@ -9,10 +9,10 @@ export default defineConfig(({ mode }) => {
         port: 3000,
         host: '0.0.0.0',
         proxy: {
-          '/hf-api': {
+          '/api/chat': {
             target: 'https://router.huggingface.co',
             changeOrigin: true,
-            rewrite: (path) => path.replace(/^\/hf-api/, ''),
+            rewrite: () => '/v1/chat/completions',
             timeout: 120000,
             proxyTimeout: 120000,
           }

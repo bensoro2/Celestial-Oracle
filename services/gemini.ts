@@ -58,7 +58,7 @@ Return ONLY valid JSON with this exact structure:
 }`;
 
   try {
-    const response = await fetch("/hf-api/v1/chat/completions", {
+    const response = await fetch("/api/chat", {
       method: "POST",
       headers: {
         "Authorization": `Bearer ${HF_TOKEN}`,
